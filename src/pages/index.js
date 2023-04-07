@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/Link'
+// import Link from 'next/Link'
 import projectStyles from '../styles/style.module.css'
 import styles from '../styles/style.module.css'
 import {MdCall} from 'react-icons/md'
@@ -915,15 +915,15 @@ const LandingPage = (props) => {
             <div className={styles['frame40053']}>
               <div className={styles['nextnav']}>
                 <span className={styles['text165']}>
-                  <Link href=' '  className='no-underline'>
+                  <a href=' '  className='no-underline'>
                   <p className='mx-20 text-slate-700 text-md font-semibold'>Events</p>
-                  </Link>
+                  </a>
                 </span>
               </div>
               <span className={styles['text167']}>
-                <Link href='' className='no-underline'>
+                <a href='' className='no-underline'>
                 <p className='no-underline text-slate-700 font-semibold '>Sign In</p>
-                </Link>
+                </a>
                 </span>
               <div className={styles['browsecourse1']}>
                 <div className=''>
