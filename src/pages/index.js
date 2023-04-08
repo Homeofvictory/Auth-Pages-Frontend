@@ -1,5 +1,6 @@
 import React from 'react'
 // import Link from 'next/Link'
+import Head from 'next/head'
 import projectStyles from '../styles/style.module.css'
 import styles from '../styles/style.module.css'
 import {MdCall} from 'react-icons/md'
@@ -14,9 +15,12 @@ import {ImTwitter} from 'react-icons/im'
 import {CiSearch} from 'react-icons/ci'
 import {CgProfile} from 'react-icons/cg'
 
-const LandingPage = (props) => {
+const LandingPage = () => {
   return (
-    <div>
+      <div>
+    {/* <Head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </Head> */}
       <div className={styles['landing-page']}>
       {/* <div>
       <img className="mx-7 md:mx-14  h-12 w-auto" src='/icon1.png' width={25} height={25} alt="hand"/>
@@ -31,7 +35,9 @@ const LandingPage = (props) => {
         </div>
         <span className={styles['text002']}>
           <span className={styles['text003']}>
-            Quick access 
+          {/* <p className='font-Aeonik'> */}
+             Quick access to
+            {/* </p> */}
             <span
               dangerouslySetInnerHTML={{
                 __html: ' ',
@@ -40,48 +46,45 @@ const LandingPage = (props) => {
           </span>
         </span>
         <div className={styles['component3']}>
-          <div className={styles['frame1']}></div>
-          <span className={styles['text004']}>
-            <span>
-              I AM
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </span>
-          </span>
           <div className={styles['frame2']}>
             <span className={styles['text006']}>
               <span>Online Community</span>
             </span>
-            <span className={styles['text008']}>
+        
+            {/* <span className={styles['text008']}>
               <span>Religious Resources</span>
             </span>
             <span className={styles['text010']}>
               <span>Spiritual Counseling</span>
-            </span>
+            </span> */}
           </div>
         </div>
         <img
           alt="hand"
-          src="/hand.png"
-          width={22}
+          src="/rosary.png"
+          width={12}
           height={22}
           className={styles['image1']}
         />
+
         <span className={styles['text012']}>
           <span>
             HOME OF VICTORY is a online community created to touch the lives of
             many who may have lost faith in God because of challenges.
           </span>
         </span>
+        {/* <div className={styles['frame381']}>
+            <span className={styles['text110']}>
+              <button type='button' className=''>Join the Community</button>
+            </span>
+          </div> */}
+        
         {/* need to be addressed */}
         {/* beginning of footer */}
         <div className={styles['footer']}>
           <img
             alt="Vector616211"
-            src="/hand.png"
+            src="/rosary.png"
             className={styles['vector61']}
           />
           <span className={styles['text014']}>
@@ -256,13 +259,15 @@ const LandingPage = (props) => {
         </div>
 
         {/* end of footer */}
+
+            <div className='grid grid-col-1 md:flex-row'>
         <div className={styles['div']}>
           <div className={styles['div01']}>
             <AiOutlineStock
               alt="svg9214"
               src="/playground_assets/svg9214-idoh.svg"
               className={`styles['svg'] mb-10 text-white` }
-            />
+              />
             <div className={styles['div02']}>
               <span className={styles['text054']}>
                 <span>Experience it anywhere</span>
@@ -275,7 +280,7 @@ const LandingPage = (props) => {
             </div>
             <div className={styles['frame40035']}>
               <span className={styles['text057']}>
-                <span className='inline '>View Programs</span>  →
+                <span className='inline '>View Programs</span> →
               </span>
              
             </div>
@@ -286,7 +291,7 @@ const LandingPage = (props) => {
               src="/playground_assets/svg9413-owfu.svg"
               className={`styles['svg'] mb-10 text-white` }
               
-            />
+              />
             <div className={styles['div04']}>
               <span className={styles['text059']}>
                 <span>Make it your life</span>
@@ -299,7 +304,7 @@ const LandingPage = (props) => {
                     dangerouslySetInnerHTML={{
                       __html: ' ',
                     }}
-                  />
+                    />
                 </span>
               </span>
             </div>
@@ -314,8 +319,8 @@ const LandingPage = (props) => {
             <AiOutlineStock
               
               className={`styles['svg'] mb-10 text-white` }
-
-            />
+              
+              />
             <div className={styles['div06']}>
               <span className={styles['text065']}>
                 <span>You are not alone</span>
@@ -328,7 +333,7 @@ const LandingPage = (props) => {
                     dangerouslySetInnerHTML={{
                       __html: ' ',
                     }}
-                  />
+                    />
                 </span>
               </span>
             </div>
@@ -336,52 +341,47 @@ const LandingPage = (props) => {
               <span className={styles['text069']}>
                 <span>Join the community</span> →
               </span>
-              {/* <img
-                alt="RightArrow29717"
-                src="/playground_assets/rightarrow29717-1kr.svg"
-                className={styles['right-arrow22']}
-              /> */}
+            
             </div>
           </div>
         </div>
+                    </div>
         <span className={styles['text071']}>
           <span>
             Light at the end of the tunnel...
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
+           
           </span>
         </span>
+            <div className='flex h-full flex-col  md:flex-row'>
         <div className={styles['group27070']}>
           <div className={styles['frame18']}>
-            {/* <img
+            <img
               // alt="Vector1121"
-              // src="/owo.png"
+              src="/starr.png"
               className={styles['vector']}
-            /> */}
+            />
           </div>
-          <div className={styles['icvotd24dpgroup']}>
-            {/* here */}
-          </div> 
+        <div>
+
           {/* <img 
           src='/sunn.png'
           width={90}
           className='right-2'
           /> */}
-          {/* side image */}
+      
           <img
             // alt="Vector1121"
             src="/man.png"
             className={styles['vector01']}
-          />
+            />
+            </div>
           {/* <img
           src='/starr.png'
           className='mt-100'
           /> */}
         </div>
-        
+          <div>
+
         <span className={styles['text073']}>
           <span >Values</span>
         </span>
@@ -420,6 +420,8 @@ const LandingPage = (props) => {
           </span>
         </span>
 
+        </div>
+        </div>
         {/* here */}
         {/* <img
           // alt="Frame10000046256282"
@@ -575,11 +577,11 @@ const LandingPage = (props) => {
               </div>
             </div>
           </div>
-          <div className={styles['frame381']}>
+          {/* <div className={styles['frame381']}>
             <span className={styles['text110']}>
-              <button type='button'>Join the Community</button>
+              <button type='button' className=''>Join the Community</button>
             </span>
-          </div>
+          </div> */}
         </div>
 
 
@@ -614,7 +616,7 @@ const LandingPage = (props) => {
                         <div className={styles['howlogosingle']}>
                           <img
                             alt="hand3769"
-                            src="/hand.png"
+                            src="/rosary.png"
                           />
                         
                         </div>
@@ -657,12 +659,12 @@ const LandingPage = (props) => {
                       <div className={styles['frame400601']}>
                         <div className={styles['howlogosingle1']}>
                           
-                            <img
+                             <img
                               alt="Rectangle163769"
-                              src="/hand.png"
+                              src="/rosary.png"
                               // className={styles['rectangle161']}
                             />
-                          </div>
+                          </div> 
                         </div>
                       </div>
               
@@ -705,7 +707,7 @@ const LandingPage = (props) => {
                              
                             <img
                               alt="Rectangle163769"
-                              src="/hand.png"
+                              src="/rosary.png"
                               // className={styles['rectangle162']}
                             />
                           
@@ -748,7 +750,7 @@ const LandingPage = (props) => {
                            
                             <img
                               alt="Rectangle163769"
-                              src="/hand.png"
+                              src="/rosary.png"
                               // className={styles['rectangle163']}
                             />
                           </div>
@@ -792,7 +794,7 @@ const LandingPage = (props) => {
                           
                             <img
                               alt="Rectangle163769"
-                              src="/hand.png"
+                              src="/rosary.png"
                               // className={styles['rectangle164']}
                             />
                           </div>
@@ -835,7 +837,7 @@ const LandingPage = (props) => {
                           
                             <img
                               alt="Rectangle163769"
-                              src="/hand.png"
+                              src="/rosary.png"
                               // className={styles['rectangle165']}
                             />
                      
@@ -899,7 +901,7 @@ const LandingPage = (props) => {
                       <div class="relative flex pl-10 flex-row w-90  h-11 border border-solid border-neutral-300 bg-slate-200 rounded-full px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200">
                      <input
                        type="search"
-                       class="relative m-0  border-slate-200  flex-auto  border border-solid  bg-slate-200 rounded-full px-3 py-1.5 text-base font-normal text- outline-none transition duration-300 ease-in-out focus:border-black  focus:text-black   dark:text-black placeholder:text-black"   placeholder="Search Items..."
+                       class="relative m-0  border-slate-200  flex-auto  border border-solid  bg-slate-200 rounded-full px-3 py-1.5 text-base font-normal text- outline-none transition duration-300 ease-in-out focus:border-black  focus:text-black   dark:text-black dark:placeholder:text-black"   placeholder="Search Items..."
                        />
                      <button
                       class="relative z-[4] flex items-center  bg-primary  font-large uppercase leading-tight  bg-blue-900 text-white w-10 rounded-full border shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
@@ -928,7 +930,7 @@ const LandingPage = (props) => {
               <div className={styles['browsecourse1']}>
                 <div className=''>
                   <span className={styles['text168']}>
-                 <button type='button'  className='btn w-40 relative blue-900 mt-2.5 ml-10 btn-primary'> 
+                 <button type='button'  className='btn btn-primary bg-blue-950 w-40 relative mt-2.5 ml-10'> 
                   Join the Community
                  </button>
                   </span>
@@ -966,6 +968,10 @@ const LandingPage = (props) => {
             </div>
           </div>
         </div>
+
+
+
+
       </div>
     </div>
   )
