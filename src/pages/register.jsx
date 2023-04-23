@@ -28,14 +28,36 @@ export default class register extends Component{
       email:"",
       password:""
     };
+    this.handleSubmit= this.handleSubmit.bind(this);
   }
 // import { Button } from 'react-bootstrap';
 // handlesubmit
-  handleSubmit(){
+  handleSubmit(e){
     try{
-
-      const{ firstname, lastname, email, password} = req.body;
+      e.preventDefault();
+      const{ firstname, lastname, email, password} = this.state;
       console.log({firstname, lastname, email, password});
+      fetch("http://localhost:8000/register",{
+        method:"POST",
+        crossDomain:true,
+        headers:{
+          "Content-Type":"application/json",
+          Accept:"application/json",
+          "Access-Control-Allow-Origin":"*",
+        },
+        body:JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          password,
+        }),
+
+      }).then((res)=>res.json())
+      .then((data)=>{
+        console.log(data, "UserRegister");
+      })
+   
+   
     }catch(error){
       console.log(error);
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ Component, useEffect, useState} from 'react'
 import Link from 'next/link'
 import styles from '../styles/design.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,11 +6,54 @@ import {AiFillFacebook} from 'react-icons/ai';
 import {FcGoogle} from 'react-icons/fc';
 
 
-import facebook from '../image/facebook.svg';
-import google from '../image/google.svg';
+  export default class login extends Component{
+// const Login = () => {
 
-// import { Button } from 'react-bootstrap';
-const Login = () => {
+
+  constructor(props){
+    super (props);
+    this.state= {
+      email:"",
+      password:""
+    };
+    this.handleSubmit= this.handleSubmit.bind(this);
+
+  }
+  handleSubmit(e){
+    try{
+      e.preventDefault();
+      const{ email, password} = this.state;
+      console.log({ email, password});
+      fetch("http://localhost:8000/login",{
+        method:"POST",
+        crossDomain:true,
+        headers:{
+          "Content-Type":"application/json",
+          Accept:"application/json",
+          "Access-Control-Allow-Origin":"*",
+        },
+        body:JSON.stringify({
+          email,
+          password,
+        }),
+
+      }).then((res)=>res.json())
+      .then((data)=>{
+        console.log(data, "UserRegister");
+        if(data.status == "SUCCESS"){
+          alert("login Successful");
+          window.localStorage.setItem("token", data.data);
+          // window.location.href="/landpage";
+        }
+      })
+   
+   
+    }catch(error){
+      console.log(error);
+    }
+  }
+  
+  render(){
   return (
  <div className={styles.login}>
     <div className='relative top-5 flex flex-row w-full'>
@@ -41,19 +84,36 @@ Sign up →
         Sign in to your account</h2>
       
     </div>
-    <form id='form' className="mt-8 space-y-6  shadow-2xl bg-[#ffff]" action={'/login'} method="POST">
+    <form id='form'  onSubmit={this.handleSubmit}  className="mt-8 space-y-6  shadow-2xl bg-[#ffff]" action={'/login'} method="POST">
 
       <div className="flex flex-col space-y- m-10  rounded-md ">
 
         <div className='pt-10 '>
-          <label for="email-address" className=' font-semibold mb-2'>Email</label><br/>
+          <label htmlFor="email-address" className=' font-semibold mb-2'>Email</label><br/>
 
-          <input  name="email" type="email" autocomplete="email" required className="w-60 rounded-md md:w-80 border-0 py-1.5 bg-slate-100 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g johndoe@gmail.com"/>
+          <input  
+          name="email" 
+          type="email" 
+          // autocomplete="email" 
+          required 
+          className="w-60 rounded-md md:w-80 border-0 py-1.5 bg-slate-100 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g johndoe@gmail.com"
+          onChange={e=>this.setState({email:e.target.value})}
+          
+          />
         </div>
 
         <div>
-          <label for="password" className="font-semibold mt-4 mb-2">Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" />
+          <label htmlFor="password" className="font-semibold mt-4 mb-2">Password</label>
+          <input 
+          id="password" 
+          name="password" 
+          type="password" 
+          // autocomplete="current-password" 
+          required 
+          className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" 
+          onChange={e=>this.setState({password:e.target.value})}
+          
+          />
         </div>
 
       <div>
@@ -70,7 +130,7 @@ Sign up →
           <p href="#" className="md:text-xs text-sm  no-underline ml-4 text-slate-700 inline hover:text-indigo-500">Forgotten your password?</p>
       
       
-          <Link href="/passwordreset" className="md:text-xs text-sm no-underline mx-4 text-blue-800 md:font-semibold hover:text-indigo-900">Reset Password</Link>
+          <Link href="/passwordresetemail" className="md:text-xs text-sm no-underline mx-4 text-blue-800 md:font-semibold hover:text-indigo-900">Reset Password</Link>
         
       </div>
       <div className='flex flex-row md:ml-4 mt-0 mb-28'>
@@ -91,5 +151,5 @@ Sign up →
         </div>
   )
 }
-
-export default Login
+}
+// export default Login

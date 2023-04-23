@@ -48,15 +48,23 @@ const Passwordresetemail = () => {
 
       <div>
           <label for="password" className="font-semibold mt-4 mb-2">Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" />
+          <input id="password" name="password" 
+          type="password" 
+           required 
+           className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password"
+            
+            />
         </div>
       <div>
           <label for="password" className="font-semibold mt-4 mb-2">Confirm Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" />
+          <input id="password" name="password" type="password" 
+          required 
+          className="relative block w-60 rounded-md md:w-80 border-0 bg-slate-100 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password" 
+          
+          />
         </div>
 
         <button type="submit" className="btn btn-primary text-bold mt-8 w-60 md:w-80 bg-blue-900">
-          
          Set new password
         </button>
        
